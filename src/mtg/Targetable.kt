@@ -1,5 +1,3 @@
 package mtg
 
-interface Targetable {
-
-}
+interface Targetable

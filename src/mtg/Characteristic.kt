@@ -1,4 +1,3 @@
 package mtg
 
-interface Characteristic {
-}
+interface Characteristic

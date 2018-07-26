@@ -1,6 +1,6 @@
 package mtg
 
-import mtg.zones.Zone
+import mtg.zones.Stack
 
-class AbilityOnStack(controller: Player, owner: Player, zone: Zone, targets: MutableCollection<Targetable>) :
-        Controllable, Object(controller, owner, zone) {}
+class AbilityOnStack(controller: Player, owner: Player, stack: Stack, targets: MutableCollection<Targetable>) :
+        Controllable, Object(controller, owner, stack)

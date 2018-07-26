@@ -1,0 +1,3 @@
+package mtg
+
+interface Ability

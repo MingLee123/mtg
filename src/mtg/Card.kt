@@ -1,4 +1,3 @@
 package mtg
 
-interface Card : Ownable {
-}
+interface Card : Ownable

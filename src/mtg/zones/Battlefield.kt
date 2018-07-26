@@ -1,4 +1,3 @@
 package mtg.zones
 
-object Battlefield : Zone() {
-}
+object Battlefield : Zone()

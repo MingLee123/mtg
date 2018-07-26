@@ -1,3 +1,3 @@
 package mtg.zones
 
-class Library : Zone() {}
+class Library : Zone()
