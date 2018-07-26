@@ -1,0 +1,5 @@
+package mtg
+
+interface Targetable {
+
+}
