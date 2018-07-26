@@ -3,10 +3,8 @@ package mtg
 import mtg.zones.Zone
 import kotlin.reflect.KClass
 
-open class Object(override var controller: Player, override var owner: Player, override var zone: Zone) : Controllable,
-        Localizable, Targetable {
-
-    private var characteristics: MutableCollection<Collection<Characteristic>> = ArrayList()
+open class Object(var characteristics: MutableCollection<Collection<Characteristic>>, override var owner: Player,
+                  override var zone: Zone) : Localizable, Ownable, Targetable {
     private fun getCharacteristic(characteristicClass: KClass<out Characteristic>): Collection<Characteristic> {
         for (characteristic in characteristics) {
             if (characteristic::class == characteristicClass) return characteristic
@@ -14,9 +12,13 @@ open class Object(override var controller: Player, override var owner: Player, o
         return ArrayList()
     }
 
-    fun isColorless() = getCharacteristic(Color::class).isEmpty()
-    fun isMonocolored() = getCharacteristic(Color::class).size == 1
-    fun isMultiColored() = getCharacteristic(Color::class).size > 1
+    val isColorless
+        get() = getCharacteristic(Color::class).isEmpty()
+    val isMonocolored
+        get() = getCharacteristic(Color::class).size == 1
+    val isMulticolored
+        get() = getCharacteristic(Color::class).size > 1
+
     fun isType(type: Type) = getCharacteristic(Type::class).contains(type)
     fun move(zone: Zone) {
         this.zone.objects.remove(this)

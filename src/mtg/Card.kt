@@ -1,3 +1,6 @@
 package mtg
 
-interface Card : Ownable
+import mtg.zones.Zone
+
+class Card(characteristics: MutableCollection<Collection<Characteristic>>, owner: Player, zone: Zone) :
+        Object(characteristics, owner, zone)
