@@ -1,3 +1,5 @@
 package mtg
 
-data class Mana(val color: Color?, val consumerRestrictions: Collection<Characteristic>, val source: Object)
+import mtg.objects.Object
+
+data class Mana(val color: Color?, val consumerRestrictions: Characteristics?, val source: Object)

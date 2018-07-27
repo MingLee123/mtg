@@ -1,3 +1,0 @@
-package mtg
-
-interface Characteristic

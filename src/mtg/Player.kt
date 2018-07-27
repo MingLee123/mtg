@@ -1,5 +1,6 @@
 package mtg
 
-import mtg.zones.Library
+import mtg.objects.Card
 
-class Player(library: Library = Library(), life: Int = 20, manaPool: Map<Mana, Int> = HashMap()) : Targetable
+class Player(mainDeck: Collection<Card>, sideboard: Collection<Card>, life: Int = 20,
+             manaPool: Map<Mana, Int>) : Targetable

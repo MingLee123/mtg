@@ -1,6 +1,6 @@
 package mtg.zones
 
-import mtg.Object
+import mtg.objects.Object
 
 abstract class Zone {
     var objects: MutableCollection<Object> = ArrayList()
