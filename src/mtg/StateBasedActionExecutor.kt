@@ -4,7 +4,11 @@ class StateBasedActionExecutor {
     /**
      * 704.5a If a player has 0 or less life, that player loses the game.
      */
-    fun sbaA() {}
+    fun sbaA() {
+        for (player in GameState.players) {
+            if (player.life < 1) GameState.players.remove(player)
+        }
+    }
 
     /**
      * 704.5b If a player attempted to draw a card from a library with no cards in it since the last time

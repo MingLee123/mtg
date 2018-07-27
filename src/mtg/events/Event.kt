@@ -1,5 +1,9 @@
 package mtg.events
 
+import mtg.GameState
+
 abstract class Event {
-    abstract fun takeEffect()
+    open fun takeEffect() {
+        GameState.eventsPerSbaCheck.add(this)
+    }
 }
