@@ -1,9 +1,11 @@
 package mtg.objects
 
-import mtg.*
-import mtg.zones.Zone
+import mtg.CardType
+import mtg.Characteristics
+import mtg.Ownable
+import mtg.Targetable
 
-interface Object : Localizable, Ownable, Targetable {
+interface Object : Ownable, Targetable {
     var characteristics: Characteristics
 
     val isColorless
@@ -14,9 +16,4 @@ interface Object : Localizable, Ownable, Targetable {
         get() = characteristics.colors!!.size > 1
 
     fun isType(cardType: CardType) = characteristics.cardTypes!!.contains(cardType)
-    fun move(zone: Zone) {
-        this.zone.objects.remove(this)
-        this.zone = zone
-        zone.objects.add(this)
-    }
 }
